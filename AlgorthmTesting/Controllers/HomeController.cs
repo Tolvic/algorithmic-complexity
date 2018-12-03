@@ -12,7 +12,7 @@ namespace AlgorthmTesting.Controllers
     {
         public IActionResult Index()
         {
-            var result = FunctionTesting.SpeedTest(FunctionTesting.TestFuction, 1, 10, 1);
+            var result = FunctionTesting.SpeedTest(FunctionTesting.TestFuction, 10, 100, 10, 10);
             ViewBag.result = result;
             return View();
         }
