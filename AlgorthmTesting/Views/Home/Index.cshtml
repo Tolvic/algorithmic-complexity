@@ -3,15 +3,21 @@
 }
 
 <h1>Results</h1>
-@foreach (var item in ViewBag.result)
-{
-    <p>id:</p>
-    <br />
-    @item.Key; 
-    <br />
-    @item.Value
+
+<table class="table table-striped">
+  <tr>
+      <th>Array Size</th>
+      <th>Time (Nanoseconds)</th>
+  </tr>
+    @foreach (var item in ViewBag.result)
+    {
+        <tr>
+            <td>@item.Key</td>
+            <td>@item.Value</td>
+        </tr>
+    }
+</table>
 
 
-}
 
 
