@@ -8,15 +8,13 @@ The challenge outline for this repository can be found [here](https://github.com
   - [x] .gitignore
   - [x] strip out superficial pages
   - [x] Set up routes
-- [ ] Create a testing class
-- [ ] Set up results view
+- [x] Create a testing class
+- [x] Set up results view
 - [ ] Test the following functions:
   - [ ] Last
   - [ ] reverse
   - [ ] shuffle
   - [ ] sort
-
-
 
 ## Testing Function
 
