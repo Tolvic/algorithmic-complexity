@@ -2,8 +2,15 @@
 The challenge outline for this repository can be found [here](https://github.com/makersacademy/course/tree/master/algorithmic_complexity).
 
 ## Todo
+- [ ] Pseudo code
 - [ ] Set up Environment
 - [ ] Create a testing function
+- [ ] Test the following functions:
+  - [ ] Last
+  - [ ] reverse
+  - [ ] shuffle
+  - [ ] sort
+
 
 
 ## Testing Function
@@ -74,3 +81,9 @@ Results {
   }
 }
 ```
+
+This looks like it will be useful for setting up the function in c#
+
+https://stackoverflow.com/questions/2082615/pass-method-as-parameter-using-c-sharp
+
+Also, show time in nano seconds
