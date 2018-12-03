@@ -11,9 +11,9 @@ The challenge outline for this repository can be found [here](https://github.com
 Pseudo code for how I anticipate this working
 
 ```
-Test(FunctionToBeTested(), MaxArraySize, incrementSize, NoTimesTestsRepeated){
+Test(FunctionToBeTested, StartArraySize, MaxArraySize, incrementSize, NbTimesTestsRepeated){
   results = new Hash
-  i = 0 + incrementSize
+  i = StartArraySize
   n = 1  
 
   for (n; while n <= NoTimesTestsRepeated; n++){
@@ -35,6 +35,9 @@ Test(FunctionToBeTested(), MaxArraySize, incrementSize, NoTimesTestsRepeated){
     }  
   }
 
+  removeUpperLowerBounds()
+  averageResults()
+  return results;
 }
 
 setup(arraySize){
@@ -47,7 +50,17 @@ tearDown(){
 }
 ```
 
-Results Hash will resemble the below prior to averaging or removing upper and lower bounds
+Results Hash will be structured:
+```
+{
+  arraySize[0]{result1, result2, ...},
+  arraySize[1]{result1, result2, ...},
+  arraySize[2]...
+}
+```
+and will resemble the below prior to averaging or removing upper and lower bounds.
+
+
 ```
 Results {
   10 => {
