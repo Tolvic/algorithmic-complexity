@@ -2,12 +2,12 @@
 The challenge outline for this repository can be found [here](https://github.com/makersacademy/course/tree/master/algorithmic_complexity).
 
 ## Todo
-- [ ] Pseudo code
-- [ ] Set up Environment
-  - [ ] Set up MVC 5 architecture
-  - [ ] .gitignore
-  - [ ] strip out superficial pages
-  - [ ] Set up routes
+- [x] Pseudo code
+- [x] Set up Environment
+  - [x] Set up MVC 5 architecture
+  - [x] .gitignore
+  - [x] strip out superficial pages
+  - [x] Set up routes
 - [ ] Create a testing class
 - [ ] Set up results view
 - [ ] Test the following functions:
