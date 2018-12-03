@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Results</h1>
+@foreach (var item in ViewBag.result)
+{
+    <p>id:</p>
+    <br />
+    @item.Key; 
+    <br />
+
+    foreach(var time in @item.Value)
+    {
+        <br />
+        @time;
+        <br />
+    }
+}
+
+
