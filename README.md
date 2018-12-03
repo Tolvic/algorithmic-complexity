@@ -4,7 +4,12 @@ The challenge outline for this repository can be found [here](https://github.com
 ## Todo
 - [ ] Pseudo code
 - [ ] Set up Environment
-- [ ] Create a testing function
+  - [ ] Set up MVC 5 architecture
+  - [ ] .gitignore
+  - [ ] strip out superficial pages
+  - [ ] Set up routes
+- [ ] Create a testing class
+- [ ] Set up results view
 - [ ] Test the following functions:
   - [ ] Last
   - [ ] reverse
