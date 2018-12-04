@@ -12,8 +12,8 @@ namespace AlgorithmTesting.Controllers
     {
         public IActionResult Index()
         {
-            var NumberOfTimesToRun = 10;
-            IDictionary<int, double> result = FunctionTesting.SpeedTest(StandardLibraryFunctions.ReverseMethod, 10, 100, 10, NumberOfTimesToRun);
+            var NumberOfTimesToRun = 50;
+            IDictionary<int, double> result = FunctionTesting.SpeedTest(StandardLibraryFunctions.ReverseMethod, 5000, 100000, 5000, NumberOfTimesToRun);
 
             ViewBag.result = result;
             ViewBag.timesRan = NumberOfTimesToRun;

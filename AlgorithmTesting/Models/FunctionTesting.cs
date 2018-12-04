@@ -66,16 +66,41 @@ namespace AlgorithmTesting.Models
         public static IDictionary<int, double> CalculateAverages(IDictionary<int, double[]> results)
         {
             IDictionary<int, double> averageResults = new Dictionary<int, double>();
+
             foreach (var item in results)
             {
-                double sum = 0;
+                int numberCount = item.Value.Count();
+                int halfIndex = numberCount / 2;
+                int halfIndex2 = halfIndex - 1;
 
-                for (int i = 0; i < item.Value.Length; i++)
+                var sortedNumbers = item.Value.OrderBy(n => n);
+                double median;
+                if ((numberCount % 2) == 0)
                 {
-                    sum += item.Value[i];
+                    median = ((sortedNumbers.ElementAt(halfIndex) +
+                        sortedNumbers.ElementAt(halfIndex2)) / 2);
                 }
-                averageResults[item.Key] = sum / item.Value.Length;
+                else
+                {
+                    median = sortedNumbers.ElementAt(halfIndex);
+                }
+                averageResults[item.Key] = median;
             }
+
+          
+
+
+            //For mean average
+            //foreach (var item in results)
+            //{
+            //    double sum = 0;
+
+            //    for (int i = 0; i < item.Value.Length; i++)
+            //    {
+            //        sum += item.Value[i];
+            //    }
+            //    averageResults[item.Key] = sum / item.Value.Length;
+            //}
 
             return averageResults;
         }
