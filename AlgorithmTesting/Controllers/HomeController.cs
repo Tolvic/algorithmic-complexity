@@ -34,10 +34,8 @@ namespace AlgorithmTesting.Controllers
         }
 
         [HttpPost]
-        public IActionResult RunTest(int startArraySize, int maxArraySize, int incrementSize, string ArrayType)
+        public IActionResult RunTest(int startArraySize, int maxArraySize, int incrementSize, int NumberOfTimesToRun, string ArrayType, string AverageType)
         {
-            var NumberOfTimesToRun = 10;
-            var AverageType = "median";
             IDictionary<int, double> result = FunctionTesting.SpeedTest(DuplicateAlgorithm.TheBestDuplicateAlgorithm, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType);
             ViewBag.result = result;
             return View();
