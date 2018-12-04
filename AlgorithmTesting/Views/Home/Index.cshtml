@@ -24,3 +24,17 @@
         </tr>
     }
 </table>
+
+<table class="table table-striped" id="data2">
+    <tr>
+        <th>Array Size</th>
+        <th>Time (Nanoseconds)</th>
+    </tr>
+    @foreach (var item in ViewBag.result2)
+    {
+        <tr>
+            <td>@item.Key</td>
+            <td>@item.Value</td>
+        </tr>
+    }
+</table>

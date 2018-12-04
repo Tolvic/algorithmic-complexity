@@ -13,9 +13,14 @@ namespace AlgorithmTesting.Controllers
         public IActionResult Index()
         {
             var NumberOfTimesToRun = 50;
-            IDictionary<int, double> result = FunctionTesting.SpeedTest(StandardLibraryFunctions.ReverseMethod, 5000, 100000, 5000, NumberOfTimesToRun);
+            var startArraySize = 5000;
+            var maxArraySize = 100000;
+            var incrementSize = 5000;
+            IDictionary<int, double> result = FunctionTesting.SpeedTest(StandardLibraryFunctions.ReverseMethod, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun);
+            IDictionary<int, double> result2 = FunctionTesting.SpeedTest(StandardLibraryFunctions.SortMethod, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun);
 
             ViewBag.result = result;
+            ViewBag.result2 = result2;
             ViewBag.timesRan = NumberOfTimesToRun;
 
             return View();

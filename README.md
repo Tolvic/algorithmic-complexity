@@ -11,11 +11,11 @@ The challenge outline for this repository can be found [here](https://github.com
 - [x] Create a testing class
 - [x] Set up results view
 - [x] Set up method to pass existing functions into SpeedTest
-- [ ] Test the following functions:
-  - [ ] Last
+- [x] Test the following functions:
+  - [x] Last
   - [x] Reverse
-  - [ ] Shuffle
-  - [ ] Sort
+  - [x] Shuffle
+  - [x] Sort
 - [ ] Create algorithms
   - [ ] Find duplicate values
     - [ ] Write unit test
@@ -56,6 +56,8 @@ The challenge outline for this repository can be found [here](https://github.com
 ## Nice to Have ##
 - [ ] User interface to configure SpeedTest parameters
 - [ ] Plot multiple functions on the same graph
+- [ ] Remove outliers (top and bottom 5%)
+- [ ] Add name of method being tested to graph
 
 ## Testing Function
 
