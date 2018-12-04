@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace AlgorithmTesting.Models
 {
     public static class MethodExtensions
@@ -16,6 +17,7 @@ namespace AlgorithmTesting.Models
                 array[k] = temp;
             }
         }
+
 
 
     }
