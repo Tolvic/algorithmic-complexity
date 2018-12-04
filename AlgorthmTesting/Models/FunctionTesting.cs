@@ -62,7 +62,7 @@ namespace AlgorthmTesting.Models
             return ts.TotalMilliseconds * 1000000;
         }
 
-        private static IDictionary<int, double> CalculateAverages(IDictionary<int, double[]> results)
+        public static IDictionary<int, double> CalculateAverages(IDictionary<int, double[]> results)
         {
             IDictionary<int, double> averageResults = new Dictionary<int, double>();
             foreach (var item in results)

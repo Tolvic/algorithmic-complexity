@@ -12,8 +12,12 @@ namespace AlgorthmTesting.Controllers
     {
         public IActionResult Index()
         {
-            var result = FunctionTesting.SpeedTest(FunctionTesting.TestFuction, 10, 100, 10, 10);
+            var NumberOfTimesToRun = 10;
+            IDictionary<int, double> result = FunctionTesting.SpeedTest(FunctionTesting.TestFuction, 10, 100, 10, NumberOfTimesToRun);
+
             ViewBag.result = result;
+            ViewBag.timesRan = NumberOfTimesToRun;
+
             return View();
         }
 
