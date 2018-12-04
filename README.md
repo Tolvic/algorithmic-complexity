@@ -90,3 +90,7 @@ This looks like it will be useful for setting up the function in c#
 https://stackoverflow.com/questions/2082615/pass-method-as-parameter-using-c-sharp
 
 Also, show time in nano seconds
+
+## Contributors
+* [Aimée Craig](https://github.com/aimeecraig/)
+* [Terry Mace](https://github.com/Tolvic)
