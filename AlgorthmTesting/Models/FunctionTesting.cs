@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Linq;
 using System.Collections.Generic;
-
+using AlgorthmTesting.Models;
 
 namespace AlgorthmTesting.Models
 {
@@ -37,12 +37,6 @@ namespace AlgorthmTesting.Models
                 Console.WriteLine(value);
             }
             return arr;
-        }
-
-        public static int[] ReverseMethod(int[] array)
-        {
-            Array.Reverse(array);
-            return array;
         }
 
         private static int[] CreateArrayOfSequentialValues(int i)
