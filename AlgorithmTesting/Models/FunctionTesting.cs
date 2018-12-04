@@ -8,7 +8,7 @@ namespace AlgorithmTesting.Models
 {
     public class FunctionTesting
     {
-        public static IDictionary<int, double> SpeedTest(Func<int[],int[]> functionToBeTested, int startArraySize, int maxArraySize, int incrementSize, int NumberTimesTestsRepeated, string type = "median")
+        public static IDictionary<int, double> SpeedTest(Func<int[],int[]> functionToBeTested, int startArraySize, int maxArraySize, int incrementSize, int NumberTimesTestsRepeated, string ArrayType = "sequential", string AverageType = "median")
         {
             IDictionary<int, double[]> results = new Dictionary<int, double[]>();
 
@@ -18,14 +18,14 @@ namespace AlgorithmTesting.Models
                 {
                     if (!results.ContainsKey(i)) results.Add(i, new double[NumberTimesTestsRepeated]); // on first iteration adds an empty array to the results dictionary
 
-                    int[] testArray = CreateShuffledArray(i);
+                    int[] testArray = CreateShuffledArray(i, ArrayType);
 
                     results[i][n] = FunctionExecutionTimer(functionToBeTested, testArray);
                 }
 
             }
 
-            return CalculateAverages(results, type);
+            return CalculateAverages(results, AverageType);
         }
 
         // Just for dummy testing SpeedTest function
@@ -44,11 +44,29 @@ namespace AlgorithmTesting.Models
             return Enumerable.Range(1, i).ToArray();
         }
 
-
-        private static int[] CreateShuffledArray(int i)
+        private static int[] CreateArrayOfRandomValues(int i)
         {
-            int[] arr = CreateArrayOfSequentialValues(i);
-         
+            Random rnd = new Random;
+            int[] arr = new int[i];
+            for(int n = 0; n < i; n++)
+            {
+                rnd.Next(10);
+            };
+            return arr;
+        }
+
+        private static int[] CreateShuffledArray(int i, string type = "sequential")
+        {
+            int[] arr;
+            if (type == "sequential")
+            {
+                arr = CreateArrayOfSequentialValues(i);
+            }
+            else
+            {
+                arr = CreateArrayOfRandomValues(i);
+            }
+
             new Random().Shuffle(arr);
 
             return arr;
