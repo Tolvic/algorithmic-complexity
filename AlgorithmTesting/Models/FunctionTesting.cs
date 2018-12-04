@@ -46,7 +46,7 @@ namespace AlgorithmTesting.Models
 
         private static int[] CreateArrayOfRandomValues(int i)
         {
-            Random rnd = new Random;
+            Random rnd = new Random();
             int[] arr = new int[i];
             for(int n = 0; n < i; n++)
             {
