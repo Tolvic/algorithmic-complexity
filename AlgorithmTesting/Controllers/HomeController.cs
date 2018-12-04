@@ -28,6 +28,21 @@ namespace AlgorithmTesting.Controllers
             return View();
         }
 
+        public IActionResult NewTest()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult RunTest(int startArraySize, int maxArraySize, int incrementSize, string ArrayType)
+        {
+            var NumberOfTimesToRun = 10;
+            var AverageType = "median";
+            IDictionary<int, double> result = FunctionTesting.SpeedTest(DuplicateAlgorithm.TheBestDuplicateAlgorithm, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType);
+            ViewBag.result = result;
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

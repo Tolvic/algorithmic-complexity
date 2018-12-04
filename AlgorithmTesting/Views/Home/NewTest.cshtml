@@ -1,0 +1,49 @@
+﻿@{
+}
+
+<h1>Form</h1>
+
+<form action="RunTest" method="post" class="form-horizontal">
+    <div class="form-group">
+        <label for="startArraySize" class="col-sm-3 control-label">Starting array size</label>
+        <div class="col-sm-9">
+            <input type="number" name="startArraySize" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="maxArraySize" class="col-sm-3 control-label">Maximum array size</label>
+        <div class="col-sm-9">
+            <input type="number" name="maxArraySize" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="incrementSize" class="col-sm-3 control-label">Increment size</label>
+        <div class="col-sm-9">
+            <input type="number" name="incrementSize" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="NumberOfTimesToRun" class="col-sm-3 control-label">Number of times to repeat test</label>
+        <div class="col-sm-9">
+            <input type="number" name="NumberOfTimesToRun" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="radio col-sm-offset-3">
+            <label>
+                <input type="radio" name="ArrayType" value="sequential" checked>
+                Sequential
+            </label>
+        </div>
+        <div class="radio col-sm-offset-3">
+            <label>
+                <input type="radio" name="ArrayType" value="random">
+                Random
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-default col-sm-offset-3">Run Test</button>
+    </div>
+</form>
