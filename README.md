@@ -10,11 +10,52 @@ The challenge outline for this repository can be found [here](https://github.com
   - [x] Set up routes
 - [x] Create a testing class
 - [x] Set up results view
+- [ ] Set up method to pass existing functions into SpeedTest
 - [ ] Test the following functions:
   - [ ] Last
-  - [ ] reverse
-  - [ ] shuffle
-  - [ ] sort
+  - [ ] Reverse
+  - [ ] Shuffle
+  - [ ] Sort
+- [ ] Create algorithms
+  - [ ] Find duplicate values
+    - [ ] Write unit test
+    - [ ] Write algorithm
+    - [ ] Run SpeedTest
+    - [ ] Plot graph
+  - [ ] Shuffle
+    - [ ] Write unit test
+    - [ ] Write algorithm
+    - [ ] Run SpeedTest
+    - [ ] Plot graph
+  - [ ] Reverse
+    - [ ] Write unit test
+    - [ ] Write algorithm
+    - [ ] Run SpeedTest
+    - [ ] Plot graph
+  - [ ] Mechacoach pairing
+    - [ ] Write unit test
+    - [ ] Write algorithm
+    - [ ] Run SpeedTest
+    - [ ] Plot graph
+  - [ ] Most frequent words
+    - [ ] Write unit test
+    - [ ] Write algorithm
+    - [ ] Run SpeedTest
+    - [ ] Plot graph
+  - [ ] Sorting 0 and 1s
+    - [ ] Write unit test
+    - [ ] Write algorithm
+    - [ ] Run SpeedTest
+    - [ ] Plot graph
+  - [ ] Sub-sequence sum
+    - [ ] Write unit test
+    - [ ] Write algorithm
+    - [ ] Run SpeedTest
+    - [ ] Plot graph
+
+## Nice to Have ##
+- [ ] User interface to configure SpeedTest parameters
+- [ ] Plot multiple functions on the same graph
 
 ## Testing Function
 

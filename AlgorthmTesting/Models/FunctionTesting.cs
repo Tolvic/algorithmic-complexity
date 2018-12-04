@@ -31,6 +31,7 @@ namespace AlgorthmTesting.Models
         // Just for dummy testing SpeedTest function
         public static int[] TestFuction(int[] arr)
         {
+            //Console.WriteLine(arr.Length);
             foreach(int value in arr)
             {
                 Console.WriteLine(value);
