@@ -6,10 +6,10 @@ namespace AlgorithmTesting.UnitTests.MethodExtensions
 {
     public class Tests
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
+        //[SetUp]
+        //public void Setup()
+        //{
+        //}
 
         [Test]
         public void ShuffleMethod_ReturnsShuffledArray()
