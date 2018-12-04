@@ -12,12 +12,14 @@ namespace AlgorithmTesting.Controllers
     {
         public IActionResult Index()
         {
-            var NumberOfTimesToRun = 50;
-            var startArraySize = 5000;
-            var maxArraySize = 100000;
-            var incrementSize = 5000;
-            IDictionary<int, double> result = FunctionTesting.SpeedTest(StandardLibraryFunctions.ReverseMethod, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun);
-            IDictionary<int, double> result2 = FunctionTesting.SpeedTest(StandardLibraryFunctions.SortMethod, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun);
+            var NumberOfTimesToRun = 10;
+            var startArraySize = 50;
+            var maxArraySize = 1000;
+            var incrementSize = 50;
+            var ArrayType = "random";
+            var AverageType = "median";
+            IDictionary<int, double> result = FunctionTesting.SpeedTest(DuplicateAlgorithm.TheBestDuplicateAlgorithm, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType);
+            IDictionary<int, double> result2 = FunctionTesting.SpeedTest(DuplicateAlgorithm.FindDuplicateNumbers, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType);
 
             ViewBag.result = result;
             ViewBag.result2 = result2;

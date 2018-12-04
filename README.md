@@ -1,4 +1,4 @@
-# algorithmic-complexity
+# Algorithmic Complexity
 The challenge outline for this repository can be found [here](https://github.com/makersacademy/course/tree/master/algorithmic_complexity).
 
 ## Todo
@@ -17,11 +17,11 @@ The challenge outline for this repository can be found [here](https://github.com
   - [x] Shuffle
   - [x] Sort
 - [ ] Create algorithms
-  - [ ] Find duplicate values
-    - [ ] Write unit test
-    - [ ] Write algorithm
-    - [ ] Run SpeedTest
-    - [ ] Plot graph
+  - [x] Find duplicate values
+    - [x] Write unit test
+    - [x] Write algorithm
+    - [x] Run SpeedTest
+    - [x] Plot graph
   - [ ] Shuffle
     - [ ] Write unit test
     - [ ] Write algorithm
@@ -59,9 +59,37 @@ The challenge outline for this repository can be found [here](https://github.com
 - [ ] Remove outliers (top and bottom 5%)
 - [ ] Add name of method being tested to graph
 
+## Prerequisite ##
+* Visual Studio Community 2017
+* [.NET Core 2.1 SDK](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.1.500-macos-x64-installer)
+
+## How to Use ##
+1. Clone the repository
+```bash
+git clone https://github.com/Tolvic/algorithmic-complexity.git
+```
+
+2. Navigate into the AlgorithmTesting folder within the repository
+```bash
+cd algorithmic-complexity/AlgorithmTesting
+```
+
+3. Run the application
+```bash
+dotnet run
+```
+
+4. Access the program from `localhost:5001`
+
+5. Amend the speed test using the instructions below
+
+### Testing an Algorithm
+
+<!-- Instructions go here -->
+
 ## Testing Function
 
-Pseudo code for how I anticipate this working
+Pseudo code for how we anticipate this working
 
 ```
 Test(FunctionToBeTested, StartArraySize, MaxArraySize, incrementSize, NbTimesTestsRepeated){
