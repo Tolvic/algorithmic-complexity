@@ -39,6 +39,12 @@ namespace AlgorthmTesting.Models
             return arr;
         }
 
+        public static int[] ReverseMethod(int[] array)
+        {
+            Array.Reverse(array);
+            return array;
+        }
+
         private static int[] CreateArrayOfSequentialValues(int i)
         {
             return Enumerable.Range(1, i).ToArray();

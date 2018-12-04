@@ -10,10 +10,10 @@ The challenge outline for this repository can be found [here](https://github.com
   - [x] Set up routes
 - [x] Create a testing class
 - [x] Set up results view
-- [ ] Set up method to pass existing functions into SpeedTest
+- [x] Set up method to pass existing functions into SpeedTest
 - [ ] Test the following functions:
   - [ ] Last
-  - [ ] Reverse
+  - [x] Reverse
   - [ ] Shuffle
   - [ ] Sort
 - [ ] Create algorithms
