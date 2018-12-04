@@ -8,7 +8,7 @@ namespace AlgorithmTesting.Models
 {
     public class FunctionTesting
     {
-        public static IDictionary<int, double> SpeedTest(Func<int[],int[]> functionToBeTested, int startArraySize, int maxArraySize, int incrementSize, int NumberTimesTestsRepeated)
+        public static IDictionary<int, double> SpeedTest(Func<int[],int[]> functionToBeTested, int startArraySize, int maxArraySize, int incrementSize, int NumberTimesTestsRepeated, string type = "median")
         {
             IDictionary<int, double[]> results = new Dictionary<int, double[]>();
 
@@ -25,7 +25,7 @@ namespace AlgorithmTesting.Models
 
             }
 
-            return CalculateAverages(results);
+            return CalculateAverages(results, type);
         }
 
         // Just for dummy testing SpeedTest function
@@ -63,44 +63,45 @@ namespace AlgorithmTesting.Models
             return ts.TotalMilliseconds * 1000000;
         }
 
-        public static IDictionary<int, double> CalculateAverages(IDictionary<int, double[]> results)
+        public static IDictionary<int, double> CalculateAverages(IDictionary<int, double[]> results, string type = "mean")
         {
             IDictionary<int, double> averageResults = new Dictionary<int, double>();
 
-            foreach (var item in results)
+            if (type == "median")
             {
-                int numberCount = item.Value.Count();
-                int halfIndex = numberCount / 2;
-                int halfIndex2 = halfIndex - 1;
+                foreach (var item in results)
+                {
+                    int numberCount = item.Value.Count();
+                    int halfIndex = numberCount / 2;
+                    int halfIndex2 = halfIndex - 1;
 
-                var sortedNumbers = item.Value.OrderBy(n => n);
-                double median;
-                if ((numberCount % 2) == 0)
-                {
-                    median = ((sortedNumbers.ElementAt(halfIndex) +
-                        sortedNumbers.ElementAt(halfIndex2)) / 2);
+                    var sortedNumbers = item.Value.OrderBy(n => n);
+                    double median;
+                    if ((numberCount % 2) == 0)
+                    {
+                        median = ((sortedNumbers.ElementAt(halfIndex) +
+                            sortedNumbers.ElementAt(halfIndex2)) / 2);
+                    }
+                    else
+                    {
+                        median = sortedNumbers.ElementAt(halfIndex);
+                    }
+                    averageResults[item.Key] = median;
                 }
-                else
-                {
-                    median = sortedNumbers.ElementAt(halfIndex);
-                }
-                averageResults[item.Key] = median;
             }
+            else if (type == "mean")
+            {
+                foreach (var item in results)
+                {
+                    double sum = 0;
 
-          
-
-
-            //For mean average
-            //foreach (var item in results)
-            //{
-            //    double sum = 0;
-
-            //    for (int i = 0; i < item.Value.Length; i++)
-            //    {
-            //        sum += item.Value[i];
-            //    }
-            //    averageResults[item.Key] = sum / item.Value.Length;
-            //}
+                    for (int i = 0; i < item.Value.Length; i++)
+                    {
+                        sum += item.Value[i];
+                    }
+                    averageResults[item.Key] = sum / item.Value.Length;
+                }
+            }
 
             return averageResults;
         }
