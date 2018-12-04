@@ -1,5 +1,5 @@
 ﻿using System;
-namespace AlgorthmTesting.Models
+namespace AlgorithmTesting.Models
 {
     public static class MethodExtensions
     {

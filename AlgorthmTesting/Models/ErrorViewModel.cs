@@ -1,6 +1,6 @@
 using System;
 
-namespace AlgorthmTesting.Models
+namespace AlgorithmTesting.Models
 {
     public class ErrorViewModel
     {

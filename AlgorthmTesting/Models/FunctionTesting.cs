@@ -2,9 +2,9 @@
 using System.Diagnostics;
 using System.Linq;
 using System.Collections.Generic;
-using AlgorthmTesting.Models;
+using AlgorithmTesting.Models;
 
-namespace AlgorthmTesting.Models
+namespace AlgorithmTesting.Models
 {
     public class FunctionTesting
     {
