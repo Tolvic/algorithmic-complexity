@@ -44,7 +44,7 @@ var myChart = new Chart(ctx, {
             ],
             borderWidth: 1
         }, {
-            label: 'Method Name',
+            label: 'Method2',
             data: values2,
             backgroundColor: [
                 'rgba(255, 99, 132, 0)',
@@ -90,7 +90,7 @@ var myChart = new Chart(ctx, {
             }]
         },
         legend: {
-            display: false
+            display: true
         }
     }
 });
