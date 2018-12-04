@@ -7,15 +7,9 @@
 var testResults = $("#data").find('tr').map(function(){
     return [ $("td", this).map(function(){ return $(this).text();}).get() ];
 }).get();
-console.log(testResults);
-
+testResults.shift();
 keys = testResults.map(x => x[0]);
-keys.shift();
-console.log(keys);
 values = testResults.map(x => x[1]);
-values.shift();
-console.log(values);
-
 
 var ctx = document.getElementById("myChart").getContext('2d');
 var myChart = new Chart(ctx, {
@@ -57,7 +51,7 @@ var myChart = new Chart(ctx, {
                 },
                 scaleLabel: {
                     display: true,
-                    labelString: 'Time (Nanoseconds'
+                    labelString: 'Time (Nanoseconds)'
                   }
             }],
             xAxes: [{
