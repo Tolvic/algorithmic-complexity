@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace AlgorithmTesting.UnitTests
 {
-    public class Tests
+    public class DuplicateAlgorithmTests
     {
         [SetUp]
         public void Setup()
