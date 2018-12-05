@@ -18,11 +18,9 @@ namespace AlgorithmTesting.Controllers
             var incrementSize = 50;
             var ArrayType = "random";
             var AverageType = "median";
-            IDictionary<int, double> result = FunctionTesting.SpeedTest(DuplicateAlgorithm.TheBestDuplicateAlgorithm, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType);
-            IDictionary<int, double> result2 = FunctionTesting.SpeedTest(DuplicateAlgorithm.FindDuplicateNumbers, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType);
+            IDictionary<int, double> result = FunctionTesting.SpeedTest(DuplicateAlgorithm.FindDuplicateNumbers, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType);
 
             ViewBag.result = result;
-            ViewBag.result2 = result2;
             ViewBag.timesRan = NumberOfTimesToRun;
 
             return View();
@@ -38,6 +36,7 @@ namespace AlgorithmTesting.Controllers
         {
             IDictionary<int, double> result = FunctionTesting.SpeedTest(DuplicateAlgorithm.TheBestDuplicateAlgorithm, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType);
             ViewBag.result = result;
+            ViewBag.timesRan = NumberOfTimesToRun;
             return View();
         }
 
