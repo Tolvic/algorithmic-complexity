@@ -13,5 +13,6 @@
     <Content Remove="Views\Home\Privacy.cshtml" />
     <Content Remove="Views\Home\Contact.cshtml" />
     <Content Remove="Views\Home\About.cshtml" />
+    <Content Remove="Views\Home\RunTest.cshtml" />
   </ItemGroup>
 </Project>

@@ -12,15 +12,16 @@ namespace AlgorithmTesting.Controllers
     {
         public IActionResult Index()
         {
-            var NumberOfTimesToRun = 10;
-            var startArraySize = 50;
-            var maxArraySize = 1000;
-            var incrementSize = 50;
-            var ArrayType = "random";
+            var NumberOfTimesToRun = 20;
+            var startArraySize = 100000;
+            var maxArraySize = 2000000;
+            var incrementSize = 100000;
+            var ArrayType = "sequential";
             var AverageType = "median";
-            IDictionary<int, double> result = FunctionTesting.SpeedTest(DuplicateAlgorithm.FindDuplicateNumbers, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType);
-
+            IDictionary<int, double> result = FunctionTesting.SpeedTest(StandardLibraryFunctions.ShuffleMethod, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType);
+            IDictionary<int, double> result2 = FunctionTesting.SpeedTest(ShuffleAlgorithm.ShuffleArrayNonList, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType);
             ViewBag.result = result;
+            ViewBag.result2 = result2;
             ViewBag.timesRan = NumberOfTimesToRun;
 
             return View();
