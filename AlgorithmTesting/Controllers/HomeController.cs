@@ -14,6 +14,7 @@ namespace AlgorithmTesting.Controllers
     {
         public IActionResult Index()
         {
+
             int NumberOfTimesToRun = 10;
             int startArraySize = 50;
             int maxArraySize = 1000;
@@ -32,6 +33,20 @@ namespace AlgorithmTesting.Controllers
             ViewBag.tests = tests;
             ViewBag.timesRan = NumberOfTimesToRun;
 
+            return View();
+        }
+
+        public IActionResult NewTest()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult RunTest(int startArraySize, int maxArraySize, int incrementSize, int NumberOfTimesToRun, string ArrayType, string AverageType)
+        {
+            IDictionary<int, double> result = FunctionTesting.SpeedTest(DuplicateAlgorithm.TheBestDuplicateAlgorithm, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType);
+            ViewBag.result = result;
+            ViewBag.timesRan = NumberOfTimesToRun;
             return View();
         }
 

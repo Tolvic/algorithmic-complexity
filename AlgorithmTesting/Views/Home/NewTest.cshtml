@@ -1,0 +1,65 @@
+﻿@{
+}
+
+<h1>Form</h1>
+
+<form action="RunTest" method="post" class="form-horizontal">
+    <div class="form-group">
+        <label for="startArraySize" class="col-sm-3 control-label">Starting array size</label>
+        <div class="col-sm-9">
+            <input type="number" name="startArraySize" class="form-control" value="500" required="" autofocus="" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="maxArraySize" class="col-sm-3 control-label">Maximum array size</label>
+        <div class="col-sm-9">
+            <input type="number" name="maxArraySize" class="form-control" value="10000" required="" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="incrementSize" class="col-sm-3 control-label">Increment size</label>
+        <div class="col-sm-9">
+            <input type="number" name="incrementSize" class="form-control" value="500" required="" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="NumberOfTimesToRun" class="col-sm-3 control-label">Number of times to repeat test</label>
+        <div class="col-sm-9">
+            <input type="number" name="NumberOfTimesToRun" class="form-control" value="20" required="" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="ArrayType" class="col-sm-3 control-label">Array Type</label>
+        <div class="radio col-sm-offset-3">
+            <label>
+                <input type="radio" name="ArrayType" value="sequential" checked>
+                Sequential
+            </label>
+        </div>
+        <div class="radio col-sm-offset-3">
+            <label>
+                <input type="radio" name="ArrayType" value="random">
+                Random
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="ArrayType" class="col-sm-3 control-label">Average Type</label>
+        <div class="radio col-sm-offset-3">
+            <label>
+                <input type="radio" name="AverageType" value="median" checked>
+                Median
+            </label>
+        </div>
+        <div class="radio col-sm-offset-3">
+            <label>
+                <input type="radio" name="AverageType" value="mean">
+                Mean
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-default col-sm-offset-3">Run Test</button>
+    </div>
+</form>
