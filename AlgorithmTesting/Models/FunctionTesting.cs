@@ -2,17 +2,16 @@
 using System.Diagnostics;
 using System.Linq;
 using System.Collections.Generic;
-using AlgorithmTesting.Models;
 
 namespace AlgorithmTesting.Models
 {
     public class FunctionTesting
     {
-        public static IDictionary<int, double> SpeedTest(Func<int[],int[]> functionToBeTested, int startArraySize, int maxArraySize, int incrementSize, int NumberTimesTestsRepeated, string ArrayType = "sequential", string AverageType = "median")
+        public static IDictionary<int, double> SpeedTest(Func<int[], int[]> functionToBeTested, int startArraySize, int maxArraySize, int incrementSize, int NumberTimesTestsRepeated, string ArrayType = "sequential", string AverageType = "median")
         {
-            IDictionary<int, double[]> results = new Dictionary<int, double[]>();
+            SortedDictionary<int, double[]> results = new SortedDictionary<int, double[]>();
 
-            for (int n = 0; n < NumberTimesTestsRepeated; n++) 
+            for (int n = 0; n < NumberTimesTestsRepeated; n++)
             {
                 for (int i = startArraySize; i <= maxArraySize; i += incrementSize)
                 {
@@ -32,7 +31,7 @@ namespace AlgorithmTesting.Models
         public static int[] TestFuction(int[] arr)
         {
             //Console.WriteLine(arr.Length);
-            foreach(int value in arr)
+            foreach (int value in arr)
             {
                 Console.WriteLine(value);
             }
@@ -48,7 +47,7 @@ namespace AlgorithmTesting.Models
         {
             Random rnd = new Random();
             int[] arr = new int[i];
-            for(int n = 0; n < i; n++)
+            for (int n = 0; n < i; n++)
             {
                 rnd.Next(10);
             };

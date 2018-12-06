@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AlgorithmTesting.Models;
+using Newtonsoft.Json;
 
 namespace AlgorithmTesting.Controllers
 {
@@ -12,17 +14,22 @@ namespace AlgorithmTesting.Controllers
     {
         public IActionResult Index()
         {
-            var NumberOfTimesToRun = 10;
-            var startArraySize = 50;
-            var maxArraySize = 1000;
-            var incrementSize = 50;
-            var ArrayType = "random";
-            var AverageType = "median";
-            IDictionary<int, double> result = FunctionTesting.SpeedTest(DuplicateAlgorithm.TheBestDuplicateAlgorithm, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType);
-            IDictionary<int, double> result2 = FunctionTesting.SpeedTest(DuplicateAlgorithm.FindDuplicateNumbers, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType);
+            int NumberOfTimesToRun = 10;
+            int startArraySize = 50;
+            int maxArraySize = 1000;
+            int incrementSize = 50;
+            string ArrayType = "random";
+            string AverageType = "median";
 
-            ViewBag.result = result;
-            ViewBag.result2 = result2;
+            TestResult[] tests = new TestResult[] {
+                new TestResult("Example Test", FunctionTesting.SpeedTest(DuplicateAlgorithm.FindDuplicateNumbers, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType)),
+                new TestResult("Example Test 2", FunctionTesting.SpeedTest(DuplicateAlgorithm.FindDuplicateNumbers, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType))
+                };
+
+            string json = JsonConvert.SerializeObject(tests);
+
+            ViewBag.json = json;
+            ViewBag.tests = tests;
             ViewBag.timesRan = NumberOfTimesToRun;
 
             return View();
