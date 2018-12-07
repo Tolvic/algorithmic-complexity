@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AlgorithmTesting.Models;
+using Newtonsoft.Json;
 
 namespace AlgorithmTesting.Controllers
 {
@@ -12,50 +14,62 @@ namespace AlgorithmTesting.Controllers
     {
         public IActionResult Index()
         {
-            var NumberOfTimesToRun = 20;
-            var startArraySize = 100000;
-            var maxArraySize = 2000000;
-            var incrementSize = 100000;
-            var ArrayType = "sequential";
-            var AverageType = "median";
-            IDictionary<int, double> result = FunctionTesting.SpeedTest(StandardLibraryFunctions.ShuffleMethod, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType);
-            IDictionary<int, double> result2 = FunctionTesting.SpeedTest(ShuffleAlgorithm.ShuffleArrayNonList, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType);
-            ViewBag.result = result;
-            ViewBag.result2 = result2;
+
+            int NumberOfTimesToRun = 10;
+            int startArraySize = 50;
+            int maxArraySize = 1000;
+            int incrementSize = 50;
+            string ArrayType = "random";
+            string AverageType = "median";
+
+            TestResult[] tests = new TestResult[] {
+                new TestResult("Example Test", FunctionTesting.SpeedTest(DuplicateAlgorithm.FindDuplicateNumbers, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType)),
+                new TestResult("Example Test 2", FunctionTesting.SpeedTest(DuplicateAlgorithm.FindDuplicateNumbers, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType)),
+                new TestResult("Example Test 2", FunctionTesting.SpeedTest(DuplicateAlgorithm.FindDuplicateNumbers, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType))
+                };
+
+            string json = JsonConvert.SerializeObject(tests);
+
+            ViewBag.json = json;
+            ViewBag.tests = tests;
             ViewBag.timesRan = NumberOfTimesToRun;
 
             return View();
         }
-
+        
         public IActionResult NewTest()
         {
+
+            AvaialbleFunctions functions = new AvaialbleFunctions();
+
+            ViewBag.AvailableFunctions = functions.FunctionNames;
+
             return View();
         }
 
         [HttpPost]
-        public IActionResult RunTest(int startArraySize, int maxArraySize, int incrementSize, int NumberOfTimesToRun, string ArrayType, string AverageType)
+        public IActionResult RunTest(string testChoice, int startArraySize, int maxArraySize, int incrementSize, int NumberOfTimesToRun, string ArrayType, string AverageType)
         {
-            IDictionary<int, double> result = FunctionTesting.SpeedTest(DuplicateAlgorithm.TheBestDuplicateAlgorithm, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType);
-            ViewBag.result = result;
+            AvaialbleFunctions functions = new AvaialbleFunctions();
+
+            TestResult[] tests = new TestResult[]
+                {
+                    new TestResult(testChoice, FunctionTesting.SpeedTest(functions.Functions[testChoice], startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType))
+                };
+
+            string json = JsonConvert.SerializeObject(tests);
+
+            ViewBag.json = json;
+            ViewBag.tests = tests;
             ViewBag.timesRan = NumberOfTimesToRun;
-            return View();
+
+            return View("~/Views/Home/Index.cshtml");
+
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            IDictionary<int, double> result = FunctionTesting.SpeedTest(StandardLibraryFunctions.ShuffleMethod, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType);
-            List<int> array = new List<int>();
-
-            foreach (KeyValuePair<int, double> keyvalue in result)
-            {
-                array.Add(keyvalue.Key);
-            }
-
-
-
-            Console.WriteLine(array[5]);
-
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }

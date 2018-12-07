@@ -4,6 +4,20 @@
 <h1>Form</h1>
 
 <form action="RunTest" method="post" class="form-horizontal">
+
+    <div class="form-group">
+        <label for="startArraySize" class="col-sm-3 control-label">Function to test</label>
+        <div class="col-sm-9">
+            <select name="testChoice" class="form-control">
+
+                @foreach (string item in ViewBag.AvailableFunctions)
+                {
+                    <option>@item</option>
+                }
+            </select>
+        </div>
+    </div>
+
     <div class="form-group">
         <label for="startArraySize" class="col-sm-3 control-label">Starting array size</label>
         <div class="col-sm-9">

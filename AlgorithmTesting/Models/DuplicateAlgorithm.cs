@@ -22,7 +22,6 @@ namespace AlgorithmTesting.Models
                     result.Add(Value);
                 }
                 temp[i] = check[i];
-                //result.ToList().ForEach(Console.WriteLine);
             }
 
             return result.ToArray();
