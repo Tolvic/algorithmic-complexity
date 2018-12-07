@@ -36,7 +36,7 @@ namespace AlgorithmTesting.Controllers
 
             return View();
         }
-
+        
         public IActionResult NewTest()
         {
 
