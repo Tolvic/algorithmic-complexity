@@ -1,7 +1,7 @@
-# Algorithmic Complexity
+# Algorithmic Complexity #
 The challenge outline for this repository can be found [here](https://github.com/makersacademy/course/tree/master/algorithmic_complexity).
 
-## Todo
+## Todo ##
 - [x] Pseudo code
 - [x] Set up Environment
   - [x] Set up MVC 5 architecture
@@ -22,11 +22,11 @@ The challenge outline for this repository can be found [here](https://github.com
     - [x] Write algorithm
     - [x] Run SpeedTest
     - [x] Plot graph
-  - [ ] Shuffle
-    - [ ] Write unit test
-    - [ ] Write algorithm
-    - [ ] Run SpeedTest
-    - [ ] Plot graph
+  - [x] Shuffle
+    - [x] Write unit test
+    - [x] Write algorithm
+    - [x] Run SpeedTest
+    - [x] Plot graph
   - [ ] Reverse
     - [ ] Write unit test
     - [ ] Write algorithm
@@ -54,10 +54,11 @@ The challenge outline for this repository can be found [here](https://github.com
     - [ ] Plot graph
 
 ## Nice to Have ##
-- [ ] User interface to configure SpeedTest parameters
-- [ ] Plot multiple functions on the same graph
+- [x] User interface to configure SpeedTest parameters
+- [x] Plot multiple functions on the same graph
 - [ ] Remove outliers (top and bottom 5%)
-- [ ] Add name of method being tested to graph
+- [x] Add name of method being tested to graph
+- [x] Label axis of graph and show unit type
 
 ## Prerequisite ##
 * Visual Studio Community 2017
@@ -79,18 +80,41 @@ cd algorithmic-complexity/AlgorithmTesting
 dotnet run
 ```
 
-4. Access the program from `localhost:5001`
+4. Access the program from [localhost:5001](`localhost:5001`)
 
 5. Amend the speed test using the instructions below
 
 ### Testing an Algorithm
 
-<!-- Instructions go here -->
+The application can run up to 4 tests simultaneously and compare the results on the same graph and table.
 
-## Testing Function
+1. Navigate to the new test page
 
-Pseudo code for how we anticipate this working
+2. Pick your functions from the first four drop down menus.
+![test-setup-1](public/test-setup-1.png)
 
+3. Set the parameters of the test (i.e. array size, increment size, number of time to repeat test).
+![test-setup-2](public/test-setup-2.png)
+
+4. Click Run Test.
+
+The results will display like below:
+![test-setup-3](public/test-setup-3.png)
+
+### Running Unit Tests ###
+1. Navigate into the AlgorithmTesting.Tests folder within the repository
+```bash
+cd algorithmic-complexity/AlgorithmTesting.Tests
+```
+
+2. Run the unit tests using the following command
+```bash
+dotnet test
+```
+
+## SpeedTest Function
+
+Pseudo code for how we anticipate this working:
 ```
 Test(FunctionToBeTested, StartArraySize, MaxArraySize, incrementSize, NbTimesTestsRepeated){
   results = new Hash
@@ -131,7 +155,7 @@ tearDown(){
 }
 ```
 
-Results Hash will be structured:
+Results hash will be structured as follows:
 ```
 {
   arraySize[0]{result1, result2, ...},
@@ -139,9 +163,8 @@ Results Hash will be structured:
   arraySize[2]...
 }
 ```
+
 and will resemble the below prior to averaging or removing upper and lower bounds.
-
-
 ```
 Results {
   10 => {
@@ -156,11 +179,11 @@ Results {
 }
 ```
 
-This looks like it will be useful for setting up the function in c#
+This looks like it will be useful for setting up the function in C#:
 
 https://stackoverflow.com/questions/2082615/pass-method-as-parameter-using-c-sharp
 
-Also, show time in nano seconds
+Also, the test result will show time in nanoseconds.
 
 ## Contributors
 * [Aimée Craig](https://github.com/aimeecraig/)
