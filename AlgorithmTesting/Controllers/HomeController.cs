@@ -36,7 +36,7 @@ namespace AlgorithmTesting.Controllers
 
             return View();
         }
-        
+
         public IActionResult NewTest()
         {
 
@@ -72,26 +72,16 @@ namespace AlgorithmTesting.Controllers
             TestResult[] tests = new TestResult[numberOfTests];
 
             int testNumber = 0;
-            if (testChoice1 != "none")
+            foreach (string test in inputTests)
             {
-                tests[testNumber] = new TestResult(testChoice1, FunctionTesting.SpeedTest(functions.Functions[testChoice1], startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType));
-                testNumber++;
+                if (test != "none")
+                {
+                    tests[testNumber] = new TestResult(test, FunctionTesting.SpeedTest(functions.Functions[test], startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType));
+                    testNumber++;
+                }
             }
-            if (testChoice2 != "none")
-            {
-                tests[testNumber] = new TestResult(testChoice2, FunctionTesting.SpeedTest(functions.Functions[testChoice2], startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType));
-                testNumber++;
-            }
-            if (testChoice3 != "none")
-            {
-                tests[testNumber] = new TestResult(testChoice3, FunctionTesting.SpeedTest(functions.Functions[testChoice3], startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType));
-                testNumber++;
-            }
-            if (testChoice4 != "none")
-            {
-                tests[testNumber] = new TestResult(testChoice4, FunctionTesting.SpeedTest(functions.Functions[testChoice4], startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType));
-                testNumber++;
-            }
+
+
 
             string json = JsonConvert.SerializeObject(tests);
 
@@ -99,7 +89,7 @@ namespace AlgorithmTesting.Controllers
             ViewBag.tests = tests;
             ViewBag.timesRan = NumberOfTimesToRun;
 
-            return View("~/Views/Home/Index.cshtml");
+            return View();
 
         }
 
