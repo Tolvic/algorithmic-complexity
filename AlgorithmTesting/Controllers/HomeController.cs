@@ -38,6 +38,11 @@ namespace AlgorithmTesting.Controllers
 
         public IActionResult NewTest()
         {
+
+            AvaialbleFunctions functions = new AvaialbleFunctions();
+
+            ViewBag.AvailableFunctions = functions.FunctionNames;
+
             return View();
         }
 
