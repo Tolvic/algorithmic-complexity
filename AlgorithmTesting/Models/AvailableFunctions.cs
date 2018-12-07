@@ -15,7 +15,11 @@ namespace AlgorithmTesting.Models
                 {"reverse",StandardLibraryFunctions.ReverseMethod},
                 {"sort", StandardLibraryFunctions.SortMethod},
                 {"last", StandardLibraryFunctions.LastMethod},
-                {"shuffle", StandardLibraryFunctions.ShuffleMethod}
+                {"shuffle", StandardLibraryFunctions.ShuffleMethod},
+                {"find duplicate numbers", DuplicateAlgorithm.FindDuplicateNumbers},
+                {"the best duplicate algorithm", DuplicateAlgorithm.TheBestDuplicateAlgorithm},
+                {"shuffle array", ShuffleAlgorithm.ShuffleArray},
+                {"shuffle array non list", ShuffleAlgorithm.ShuffleArrayNonList}
             };
 
 
@@ -23,7 +27,11 @@ namespace AlgorithmTesting.Models
                 "reverse",
                 "sort",
                 "last",
-                "shuffle"
+                "shuffle",
+                "find duplicate numbers",
+                "the best duplicate algorithm",
+                "shuffle array",
+                "shuffle array non list"
                 };
             FunctionNames = funcNames;
         }
