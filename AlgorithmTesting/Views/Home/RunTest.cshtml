@@ -1,26 +1,30 @@
 ﻿@{
     ViewData["Title"] = "Test Results";
 }
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
-
 <h1>Results</h1>
-<div class="chart-container" style="position: relative; margin: auto; height:50vh; width:80vw">
-    <canvas id="myChart" width="400" height="400"></canvas>
-</div>
-
+<canvas id="myChart" style="height:60vh !important; width:80vw !important"></canvas>
 <p>These results are an average from @ViewBag.timesRan iterations of the method being tested at each array size.</p>
-
+<h2>Data</h2>
 <table class="table table-striped" id="data">
-  <tr>
-      <th>Array Size</th>
-      <th>Time (Nanoseconds)</th>
-  </tr>
-    @foreach (var item in ViewBag.result)
+    <tr>
+        <th>Array Size</th>
+        @foreach (var value in ViewBag.tests)
+        {
+            <th>@value.TestedMethodName</th>
+        }
+    </tr>
+    @foreach (var value in ViewBag.tests[0].ArraySizes)
     {
         <tr>
-            <td>@item.Key</td>
-            <td>@item.Value</td>
+            <td>@value</td>
+            @foreach (var element in ViewBag.tests)
+            {
+                <td>@element.TestResults[value]</td>
+            }
         </tr>
+
+
     }
 </table>
+<p style="display: none;" id="json">@ViewBag.json</p>
