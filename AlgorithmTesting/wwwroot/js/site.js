@@ -67,8 +67,7 @@ for(var i = 0; i < methodNames.length; i++){
 
 
 var options =  {
-responsive: true,
-    maintainAspectRatio: false,
+
 
         title: {
             display: true,
@@ -103,9 +102,10 @@ var myChart = new Chart(ctx, {
     type: 'line',
     data: {
         labels: arraySizes,
-        datasets: dataSet,
-        options: options
-    }
+        datasets: dataSet
+
+    },
+    options: options
 });
     
 
