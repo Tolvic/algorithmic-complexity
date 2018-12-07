@@ -1,7 +1,7 @@
 # Algorithmic Complexity #
 The challenge outline for this repository can be found [here](https://github.com/makersacademy/course/tree/master/algorithmic_complexity).
 
-## Prerequisite ##
+## Prerequisites ##
 * Visual Studio Community 2017
 * [.NET Core 2.1 SDK](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.1.500-macos-x64-installer)
 
