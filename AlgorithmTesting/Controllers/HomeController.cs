@@ -48,14 +48,50 @@ namespace AlgorithmTesting.Controllers
         }
 
         [HttpPost]
-        public IActionResult RunTest(string testChoice, int startArraySize, int maxArraySize, int incrementSize, int NumberOfTimesToRun, string ArrayType, string AverageType)
+        public IActionResult RunTest(int startArraySize, int maxArraySize, int incrementSize, int NumberOfTimesToRun, string ArrayType, string AverageType, string testChoice1, string testChoice2, string testChoice3, string testChoice4)
         {
+            string[] inputTests = new string[]
+            {
+                testChoice1,
+                testChoice2,
+                testChoice3,
+                testChoice4
+            };
+            int numberOfTests = 0;
+
+            foreach (string i in inputTests)
+            {
+                if (i != "none")
+                {
+                    numberOfTests++;
+
+                }
+            }
             AvaialbleFunctions functions = new AvaialbleFunctions();
 
-            TestResult[] tests = new TestResult[]
-                {
-                    new TestResult(testChoice, FunctionTesting.SpeedTest(functions.Functions[testChoice], startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType))
-                };
+            TestResult[] tests = new TestResult[numberOfTests];
+
+            int testNumber = 0;
+            if (testChoice1 != "none")
+            {
+                tests[testNumber] = new TestResult(testChoice1, FunctionTesting.SpeedTest(functions.Functions[testChoice1], startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType));
+                testNumber++;
+            }
+            if (testChoice2 != "none")
+            {
+                tests[testNumber] = new TestResult(testChoice2, FunctionTesting.SpeedTest(functions.Functions[testChoice2], startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType));
+                testNumber++;
+            }
+            if (testChoice3 != "none")
+            {
+                tests[testNumber] = new TestResult(testChoice3, FunctionTesting.SpeedTest(functions.Functions[testChoice3], startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType));
+                testNumber++;
+            }
+            if (testChoice4 != "none")
+            {
+                tests[testNumber] = new TestResult(testChoice4, FunctionTesting.SpeedTest(functions.Functions[testChoice4], startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType));
+                testNumber++;
+            }
 
             string json = JsonConvert.SerializeObject(tests);
 

@@ -8,7 +8,47 @@
     <div class="form-group">
         <label for="startArraySize" class="col-sm-3 control-label">Function to test</label>
         <div class="col-sm-9">
-            <select name="testChoice" class="form-control">
+            <select name="testChoice1" class="form-control">
+                <option>none</option>
+
+                @foreach (string item in ViewBag.AvailableFunctions)
+                {
+                    <option>@item</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="startArraySize" class="col-sm-3 control-label">Function to test</label>
+        <div class="col-sm-9">
+            <select name="testChoice2" class="form-control">
+                <option>none</option>
+
+                @foreach (string item in ViewBag.AvailableFunctions)
+                {
+                    <option>@item</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="startArraySize" class="col-sm-3 control-label">Function to test</label>
+        <div class="col-sm-9">
+            <select name="testChoice3" class="form-control">
+                <option>none</option>
+
+                @foreach (string item in ViewBag.AvailableFunctions)
+                {
+                    <option>@item</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="startArraySize" class="col-sm-3 control-label">Function to test</label>
+        <div class="col-sm-9">
+            <select name="testChoice4" class="form-control">
+                <option>none</option>
 
                 @foreach (string item in ViewBag.AvailableFunctions)
                 {
