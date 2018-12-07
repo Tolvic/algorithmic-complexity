@@ -58,7 +58,7 @@ The challenge outline for this repository can be found [here](https://github.com
 - [x] Plot multiple functions on the same graph
 - [ ] Remove outliers (top and bottom 5%)
 - [x] Add name of method being tested to graph
-- [ ] Label axis of graph and show unit type
+- [x] Label axis of graph and show unit type
 
 ## Prerequisite ##
 * Visual Studio Community 2017
