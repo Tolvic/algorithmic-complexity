@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Web;
 
 namespace AlgorithmTesting.Models
 {
     public static class MethodExtensions
     {
-       public static void Shuffle<T>(this Random rng, T[] array)
+        public static void Shuffle<T>(this Random rng, T[] array)
         {
             // Method uses Fisher Yates Algorthim 
             // Source: https://stackoverflow.com/questions/108819/best-way-to-randomize-an-array-with-net
@@ -17,8 +18,5 @@ namespace AlgorithmTesting.Models
                 array[k] = temp;
             }
         }
-
-
-
     }
 }
