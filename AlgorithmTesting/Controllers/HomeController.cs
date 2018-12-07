@@ -24,6 +24,7 @@ namespace AlgorithmTesting.Controllers
 
             TestResult[] tests = new TestResult[] {
                 new TestResult("Example Test", FunctionTesting.SpeedTest(DuplicateAlgorithm.FindDuplicateNumbers, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType)),
+                new TestResult("Example Test 2", FunctionTesting.SpeedTest(DuplicateAlgorithm.FindDuplicateNumbers, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType)),
                 new TestResult("Example Test 2", FunctionTesting.SpeedTest(DuplicateAlgorithm.FindDuplicateNumbers, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType))
                 };
 
@@ -47,12 +48,23 @@ namespace AlgorithmTesting.Controllers
         }
 
         [HttpPost]
-        public IActionResult RunTest(int startArraySize, int maxArraySize, int incrementSize, int NumberOfTimesToRun, string ArrayType, string AverageType)
+        public IActionResult RunTest(string testChoice, int startArraySize, int maxArraySize, int incrementSize, int NumberOfTimesToRun, string ArrayType, string AverageType)
         {
-            IDictionary<int, double> result = FunctionTesting.SpeedTest(DuplicateAlgorithm.TheBestDuplicateAlgorithm, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType);
-            ViewBag.result = result;
+            AvaialbleFunctions functions = new AvaialbleFunctions();
+
+            TestResult[] tests = new TestResult[]
+                {
+                    new TestResult(testChoice, FunctionTesting.SpeedTest(functions.Functions[testChoice], startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType))
+                };
+
+            string json = JsonConvert.SerializeObject(tests);
+
+            ViewBag.json = json;
+            ViewBag.tests = tests;
             ViewBag.timesRan = NumberOfTimesToRun;
-            return View();
+
+            return View("~/Views/Home/Index.cshtml");
+
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
