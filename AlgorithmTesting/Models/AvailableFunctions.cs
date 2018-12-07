@@ -19,7 +19,8 @@ namespace AlgorithmTesting.Models
                 {"find duplicate numbers", DuplicateAlgorithm.FindDuplicateNumbers},
                 {"the best duplicate algorithm", DuplicateAlgorithm.TheBestDuplicateAlgorithm},
                 {"shuffle array", ShuffleAlgorithm.ShuffleArray},
-                {"shuffle array non list", ShuffleAlgorithm.ShuffleArrayNonList}
+                {"shuffle array non list", ShuffleAlgorithm.ShuffleArrayNonList},
+                {"insertion sort", SortAlgorithm.InsertionSort}
             };
 
 
@@ -31,7 +32,8 @@ namespace AlgorithmTesting.Models
                 "find duplicate numbers",
                 "the best duplicate algorithm",
                 "shuffle array",
-                "shuffle array non list"
+                "shuffle array non list",
+                "insertion sort"
                 };
             FunctionNames = funcNames;
         }
