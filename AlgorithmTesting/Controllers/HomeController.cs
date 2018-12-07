@@ -44,6 +44,18 @@ namespace AlgorithmTesting.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
+            IDictionary<int, double> result = FunctionTesting.SpeedTest(StandardLibraryFunctions.ShuffleMethod, startArraySize, maxArraySize, incrementSize, NumberOfTimesToRun, ArrayType, AverageType);
+            List<int> array = new List<int>();
+
+            foreach (KeyValuePair<int, double> keyvalue in result)
+            {
+                array.Add(keyvalue.Key);
+            }
+
+
+
+            Console.WriteLine(array[5]);
+
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
