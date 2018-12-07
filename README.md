@@ -1,65 +1,6 @@
 # Algorithmic Complexity #
 The challenge outline for this repository can be found [here](https://github.com/makersacademy/course/tree/master/algorithmic_complexity).
 
-## Todo ##
-- [x] Pseudo code
-- [x] Set up Environment
-  - [x] Set up MVC 5 architecture
-  - [x] .gitignore
-  - [x] strip out superficial pages
-  - [x] Set up routes
-- [x] Create a testing class
-- [x] Set up results view
-- [x] Set up method to pass existing functions into SpeedTest
-- [x] Test the following functions:
-  - [x] Last
-  - [x] Reverse
-  - [x] Shuffle
-  - [x] Sort
-- [ ] Create algorithms
-  - [x] Find duplicate values
-    - [x] Write unit test
-    - [x] Write algorithm
-    - [x] Run SpeedTest
-    - [x] Plot graph
-  - [x] Shuffle
-    - [x] Write unit test
-    - [x] Write algorithm
-    - [x] Run SpeedTest
-    - [x] Plot graph
-  - [ ] Reverse
-    - [ ] Write unit test
-    - [ ] Write algorithm
-    - [ ] Run SpeedTest
-    - [ ] Plot graph
-  - [ ] Mechacoach pairing
-    - [ ] Write unit test
-    - [ ] Write algorithm
-    - [ ] Run SpeedTest
-    - [ ] Plot graph
-  - [ ] Most frequent words
-    - [ ] Write unit test
-    - [ ] Write algorithm
-    - [ ] Run SpeedTest
-    - [ ] Plot graph
-  - [ ] Sorting 0 and 1s
-    - [ ] Write unit test
-    - [ ] Write algorithm
-    - [ ] Run SpeedTest
-    - [ ] Plot graph
-  - [ ] Sub-sequence sum
-    - [ ] Write unit test
-    - [ ] Write algorithm
-    - [ ] Run SpeedTest
-    - [ ] Plot graph
-
-## Nice to Have ##
-- [x] User interface to configure SpeedTest parameters
-- [x] Plot multiple functions on the same graph
-- [ ] Remove outliers (top and bottom 5%)
-- [x] Add name of method being tested to graph
-- [x] Label axis of graph and show unit type
-
 ## Prerequisite ##
 * Visual Studio Community 2017
 * [.NET Core 2.1 SDK](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.1.500-macos-x64-installer)
@@ -184,6 +125,65 @@ This looks like it will be useful for setting up the function in C#:
 https://stackoverflow.com/questions/2082615/pass-method-as-parameter-using-c-sharp
 
 Also, the test result will show time in nanoseconds.
+
+## Todo ##
+- [x] Pseudo code
+- [x] Set up Environment
+  - [x] Set up MVC 5 architecture
+  - [x] .gitignore
+  - [x] strip out superficial pages
+  - [x] Set up routes
+- [x] Create a testing class
+- [x] Set up results view
+- [x] Set up method to pass existing functions into SpeedTest
+- [x] Test the following functions:
+  - [x] Last
+  - [x] Reverse
+  - [x] Shuffle
+  - [x] Sort
+- [ ] Create algorithms
+  - [x] Find duplicate values
+    - [x] Write unit test
+    - [x] Write algorithm
+    - [x] Run SpeedTest
+    - [x] Plot graph
+  - [x] Shuffle
+    - [x] Write unit test
+    - [x] Write algorithm
+    - [x] Run SpeedTest
+    - [x] Plot graph
+  - [ ] Reverse
+    - [ ] Write unit test
+    - [ ] Write algorithm
+    - [ ] Run SpeedTest
+    - [ ] Plot graph
+  - [ ] Mechacoach pairing
+    - [ ] Write unit test
+    - [ ] Write algorithm
+    - [ ] Run SpeedTest
+    - [ ] Plot graph
+  - [ ] Most frequent words
+    - [ ] Write unit test
+    - [ ] Write algorithm
+    - [ ] Run SpeedTest
+    - [ ] Plot graph
+  - [ ] Sorting 0 and 1s
+    - [ ] Write unit test
+    - [ ] Write algorithm
+    - [ ] Run SpeedTest
+    - [ ] Plot graph
+  - [ ] Sub-sequence sum
+    - [ ] Write unit test
+    - [ ] Write algorithm
+    - [ ] Run SpeedTest
+    - [ ] Plot graph
+
+## Nice to Have ##
+- [x] User interface to configure SpeedTest parameters
+- [x] Plot multiple functions on the same graph
+- [ ] Remove outliers (top and bottom 5%)
+- [x] Add name of method being tested to graph
+- [x] Label axis of graph and show unit type
 
 ## Contributors
 * [Aimée Craig](https://github.com/aimeecraig/)
